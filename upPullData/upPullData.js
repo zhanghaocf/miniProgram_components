@@ -27,14 +27,14 @@ Component({
       }
     },
     isFinish:{
-      type: Boolean, //该属性设置scrollview上拉距离底部多少距离触发函数
+      type: Boolean, //该属性上拉获取完所有数据显示的内容
       value: false, // 属性初始值（可选），如果未指定则会根据类型选择一个
       observer: function (newVal, oldVal, changedPath) {
 
       }
     },
     loadingType:{
-      type: String, //该属性设置scrollview上拉距离底部多少距离触发函数
+      type: String, //该属性设置上拉获取数据过程中loading的样式
       value: 'Loading0', // 属性初始值（可选），如果未指定则会根据类型选择一个
       observer: function (newVal, oldVal, changedPath) {
 

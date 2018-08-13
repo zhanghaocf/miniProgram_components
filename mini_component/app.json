@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/scrollView/scrollView",
+    "pages/component/component",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

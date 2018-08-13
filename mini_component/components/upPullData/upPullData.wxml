@@ -1,0 +1,21 @@
+<scroll-view class='sv' scroll-y="{{!isLoading}}" style='height:{{scrollViewHeight}}px' lower-threshold="{{lowerThreshold}}" enable-back-to-top="true" bindscrolltolower="getList">
+<slot></slot>
+<view class="loading0" wx:if="{{isLoading&&loadingType==='Loading0'}}">
+    <view class='updown'>加</view>
+    <view class='updown'>载</view>
+    <view class='updown'>数</view>
+    <view class='updown'>据</view>
+    <view class='updown'>中</view>
+  </view>
+  <view class='loading1' wx:if="{{isLoading&&loadingType!=='Loading0'}}">
+    <image wx:if="{{loadingType==='Loading1'}}" src='img/loading1.png' class='loadingImg'></image>
+    <image wx:if="{{loadingType==='Loading2'}}" src='img/loading2.png' class='loadingImg'></image>
+    <image wx:if="{{loadingType==='Loading3'}}" src='img/loading3.png' class='loadingImg'></image>
+    <image wx:if="{{loadingType==='Loading4'}}" src='img/loading4.png' class='loadingImg'></image>
+    加载数据中
+  </view>
+  <view class='finishData' wx:if="{{!isLoading&&isFinish}}">
+    <image class='noinfo' src='img/no-info.png'></image>
+    没有数据啦~
+  </view>
+</scroll-view>

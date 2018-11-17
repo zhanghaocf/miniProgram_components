@@ -1,6 +1,0 @@
-<!--pages/scrollView/scrollView.wxml-->
-<upPullData scrollViewHeight="{{scrollViewHeight}}" loadingType="{{loadType}}" isFinish="{{isFinish}}" showLoading="{{isLoading}}" lowerThreshold="{{40}}" bindgetList="getData">
-  <block wx:for="{{datalist}}" wx:key="id">
-    <view class='h'>{{item.n}}</view>
-  </block>
-</upPullData>

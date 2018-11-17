@@ -1,4 +1,8 @@
 branch practice
+<<<<<<< HEAD
 master branch
 
 
+=======
+Dev branch1
+>>>>>>> dev

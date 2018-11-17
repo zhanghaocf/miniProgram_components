@@ -1,0 +1,11 @@
+/* pages/scrollView/scrollView.wxss */
+
+.h{
+  height:500rpx;
+  background-color: yellow;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+
+

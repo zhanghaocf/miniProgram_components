@@ -1,0 +1,5 @@
+<view class='flexG {{operaType}}'>
+  <view class='minus' hover-stay-time="100" hover-class='plusActive click-hover' catchtap='minusFn'></view>
+  <input class='productCount' type="number" catchchange="changeFn" value="{{myCount}}"/>
+  <view class='plus' hover-class='click-hover plusActive' hover-stay-time="100" catchtap='plusFn'></view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "自定义组件",
+  "usingComponents": {
+    "zxLoading": "/components/component-zxLoading/component-zxLoading",
+    "plusMinus":"/components/plusMinus/plusMinus"
+  }
+}

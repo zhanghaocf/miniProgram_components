@@ -1,0 +1,33 @@
+/* pages/swip/swip.wxss */
+.bannerImg{
+  height:100%;
+  width:100%;
+}
+.siwrap{
+  position:relative;
+  height:90%;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  transition: all 0.6s linear;
+  -webkit-transition: all 0.6s linear;
+  overflow: hidden;
+}
+.old{
+  transform: scale(0.8);
+}
+.title{
+  position:absolute;
+  width:100%;
+  bottom:0;
+  left:0;
+  background-color: rgba(0,0,0,0.6);
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color:white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:0 30rpx;
+  box-sizing: border-box;
+}

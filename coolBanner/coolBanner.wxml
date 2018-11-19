@@ -1,0 +1,20 @@
+<!--pages/swip/swip.wxml-->
+<swiper indicator-dots="true" 
+        indicator-color="#ccc" 
+        indicator-active-color="orange"
+        autoplay="true"
+        duration="600"
+        circular="true"
+        previous-margin="100rpx"
+        next-margin="100rpx"
+        bindchange="changeSwip"
+        style="height:{{swiperHeight}}rpx">
+  <block wx:for="{{bannerList}}" wx:key="{{id}}">
+    <swiper-item>
+      <view data-url="{{item.url}}" bindtap='linkto' class="siwrap {{swiperIndex==index?'current':'old'}}">
+        <image src='{{item.src}}' mode="aspectFill" class="bannerImg"></image>
+        <view wx:if="{{item.title}}" class='title'>{{item.title}}</view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

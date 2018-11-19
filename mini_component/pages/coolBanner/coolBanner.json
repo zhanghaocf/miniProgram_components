@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "coolBanner": "/components/coolBanner/coolBanner"
+  }
+}

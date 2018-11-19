@@ -1,0 +1,3 @@
+<!--pages/coolBanner/coolBanner.wxml-->
+<coolBanner bannerList="{{bannerList}}" swiperHeight="500"></coolBanner>
+

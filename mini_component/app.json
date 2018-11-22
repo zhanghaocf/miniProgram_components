@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/skipOperation/skipOperation",
     "pages/coolBanner/coolBanner",
     "pages/scrollView/scrollView",
     "pages/component/component",

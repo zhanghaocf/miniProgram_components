@@ -1,0 +1,5 @@
+/* pages/skipOperation/skipOperation.wxss */
+.styl{
+  background-color: pink;
+  height:100%;
+}

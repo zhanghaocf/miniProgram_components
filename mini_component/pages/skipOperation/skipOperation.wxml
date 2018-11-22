@@ -1,0 +1,13 @@
+<!--pages/skipOperation/skipOperation.wxml-->
+<block wx:for="{{list}}" wx:key="id">
+  <zhskip index="{{index}}"
+          selectIndex="{{selectIndex}}"
+          bindindependenceFn="indepence"
+          bindshareFn="share"
+          binddeleteFn="delete">
+    <view class='styl'>
+      <view>姓名：{{item.name}}</view>
+      <view>年龄：{{item.age}}</view>
+    </view>
+  </zhskip>
+</block>

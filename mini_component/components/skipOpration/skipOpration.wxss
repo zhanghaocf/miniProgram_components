@@ -1,0 +1,30 @@
+/* pages/skipdel/skipdel.wxss */
+.skipwrap{
+  display: flex;
+  display: -webkit-flex;
+ 
+}
+.con{
+  flex-basis: 100%;
+  flex-shrink: 0;
+}
+.operaBnt{
+  height:100%;
+  width:150rpx;
+  font-size: 30rpx;
+  color:white;
+  flex-shrink: 0;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content:center;
+}
+.del{
+  background-color: red;
+}
+.shareBtn{
+  background-color: orange;
+}
+.button-hover{
+  opacity: 0.8
+}

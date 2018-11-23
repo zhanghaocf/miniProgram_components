@@ -1,8 +1,9 @@
 {
-    "usingComponents": {
-      "zhskip": "/components/skipOpration/skipOpration",
-      "wux-cell-group": "/dist/cell-group/index",
-      "wux-cell": "/dist/cell/index",
-      "wux-switch": "/dist/switch/index"
-    }
+  "navigationBarTitleText": "skipOperation",
+  "usingComponents": {
+    "zhskip": "/components/skipOpration/skipOpration",
+    "wux-cell-group": "/dist/cell-group/index",
+    "wux-cell": "/dist/cell/index",
+    "wux-switch": "/dist/switch/index"
+  }
 }

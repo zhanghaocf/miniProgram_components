@@ -50,7 +50,7 @@ Page({
   onLoad: function (options) {
     var sysInfo = wx.getSystemInfoSync();
     this.setData({
-      scrollViewHeight: sysInfo.windowHeight
+      scrollViewHeight: sysInfo.windowHeight//全屏高度
     })
   },
   getData:function(e){

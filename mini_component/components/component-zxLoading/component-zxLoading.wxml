@@ -1,6 +1,5 @@
 <!-- 组件模板 -->
 <view class='loadingMusk'>
-<image src='img/add.png'></image>
   <view class='loadingWrap'>
       <view class="sk-wandering-cubes mb20" wx:if="{{loadType==='gururin'}}">
         <view class="sk-cube sk-cube1"></view>

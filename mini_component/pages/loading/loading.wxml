@@ -1,0 +1,6 @@
+<!--pages/loading/loading.wxml-->
+<wux-button class='btn' block type="dark" data-type="gururin" bindtap="showLoading">默认</wux-button>
+<block wx:for="{{list}}" wx:key="id">
+  <wux-button class='btn' block type="{{item.btntype}}" data-type="{{item.name}}" bindtap="showLoading">{{item.name}}</wux-button>
+</block>
+<zhloading wx:if="{{isLoading}}" loadType="{{ltype}}">正在加载</zhloading>

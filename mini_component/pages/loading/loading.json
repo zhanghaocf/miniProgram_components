@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "loading",
+  "usingComponents":{
+    "wux-button": "../../dist/button/index",
+    "zhloading":"/components/component-zxLoading/component-zxLoading"
+  }
+}

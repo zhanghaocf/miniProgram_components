@@ -1,10 +1,10 @@
 <!--pages/swip/swip.wxml-->
-<swiper indicator-dots="true" 
+<swiper indicator-dots="{{dotshow}}" 
         indicator-color="#ccc" 
         indicator-active-color="orange"
-        autoplay="true"
+        autoplay="{{autoplay}}"
         duration="600"
-        circular="true"
+        circular="{{circle}}"
         previous-margin="100rpx"
         next-margin="100rpx"
         bindchange="changeSwip"

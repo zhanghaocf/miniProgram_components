@@ -9,18 +9,18 @@ Page({
       {
         id: 1,
         src: '/imgs/banner1.jpg',
-        title: '轮播图一222222222222222222222222222222222222',
-        url: '/pages/test/test'
+        
       },
       {
         id: 2,
         src: '/imgs/banner2.jpg',
-        title: '轮播图二水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水',
+        title: '轮播图二',
       },
       {
         id: 3,
         src: '/imgs/banner3.jpg',
-        title: '轮播图三',
+        title: '点击可以跳转首页',
+        url: '/pages/index/index'
       },
       {
         id: 4,
@@ -33,8 +33,15 @@ Page({
         title: '轮播图五',
       }
     ],
+    dotshow:true,
+    circle:true,
+    autoplay:true,
   },
-
+  onChange(e) {
+    this.setData({
+      [e.currentTarget.dataset.name]:e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

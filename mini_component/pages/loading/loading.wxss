@@ -1,0 +1,8 @@
+/* pages/loading/loading.wxss */
+page{
+  padding:30rpx;
+  box-sizing: border-box;
+}
+.btn{
+  margin-bottom: 15rpx;
+}

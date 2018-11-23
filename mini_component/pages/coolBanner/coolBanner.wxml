@@ -1,3 +1,18 @@
 <!--pages/coolBanner/coolBanner.wxml-->
-<coolBanner bannerList="{{bannerList}}" swiperHeight="500"></coolBanner>
-
+<coolBanner bannerList="{{bannerList}}"
+            swiperHeight="500"
+            dotshow="{{dotshow}}"
+            circle="{{circle}}"
+            autoplay="{{autoplay}}">
+</coolBanner>
+<wux-cell-group title="操作属性">
+  <wux-cell title="dotshow">
+      <wux-switch name="dotshow" slot="footer" color="balanced" data-name="dotshow" value="{{dotshow}}" bind:change="onChange" />
+  </wux-cell>
+  <wux-cell title="circle">
+      <wux-switch name="circle" slot="footer" color="calm" data-name="circle" value="{{circle}}" bind:change="onChange" />
+  </wux-cell>
+  <wux-cell title="autoplay">
+      <wux-switch name="autoplay" slot="footer" color="energized" data-name="autoplay" value="{{autoplay}}" bind:change="onChange" />
+  </wux-cell>
+</wux-cell-group>

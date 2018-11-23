@@ -4,10 +4,16 @@
           selectIndex="{{selectIndex}}"
           bindindependenceFn="indepence"
           bindshareFn="share"
-          binddeleteFn="delete">
+          binddeleteFn="delete"
+          needShare="{{needShare}}">
     <view class='styl'>
       <view>姓名：{{item.name}}</view>
       <view>年龄：{{item.age}}</view>
     </view>
   </zhskip>
 </block>
+<wux-cell-group title="操作属性">
+  <wux-cell title="needShare">
+      <wux-switch name="needShare" slot="footer" color="balanced" data-name="needShare" value="{{needShare}}" bind:change="onChange" />
+  </wux-cell>
+</wux-cell-group>

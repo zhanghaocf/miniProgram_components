@@ -4,6 +4,7 @@
     "coolBanner": "/components/coolBanner/coolBanner",
     "wux-cell-group": "/dist/cell-group/index",
     "wux-cell": "/dist/cell/index",
-    "wux-switch": "/dist/switch/index"
+    "wux-switch": "/dist/switch/index",
+    "wux-input": "/dist/input/index"
   }
 }

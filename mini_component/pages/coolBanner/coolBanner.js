@@ -36,11 +36,23 @@ Page({
     dotshow:true,
     circle:true,
     autoplay:true,
+    swiperHeight:500
   },
   onChange(e) {
     this.setData({
       [e.currentTarget.dataset.name]:e.detail.value
     })
+  },
+  blurfn(e){
+    let newval=e.detail.value;
+    let swiperHeight = this.data.swiperHeight;
+    if (swiperHeight != newval){
+      newval =  Number(newval)>0 ? newval:500;
+      console.log(newval)
+      this.setData({
+        swiperHeight: newval
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

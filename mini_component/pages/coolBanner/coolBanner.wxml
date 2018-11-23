@@ -1,6 +1,6 @@
 <!--pages/coolBanner/coolBanner.wxml-->
 <coolBanner bannerList="{{bannerList}}"
-            swiperHeight="500"
+            swiperHeight="{{swiperHeight}}"
             dotshow="{{dotshow}}"
             circle="{{circle}}"
             autoplay="{{autoplay}}">
@@ -14,5 +14,8 @@
   </wux-cell>
   <wux-cell title="autoplay">
       <wux-switch name="autoplay" slot="footer" color="energized" data-name="autoplay" value="{{autoplay}}" bind:change="onChange" />
+  </wux-cell>
+  <wux-cell hover-class="none">
+      <wux-input bindblur='blurfn' label="swiperHeight" placeholder="设置轮播高度" type="number"/>
   </wux-cell>
 </wux-cell-group>

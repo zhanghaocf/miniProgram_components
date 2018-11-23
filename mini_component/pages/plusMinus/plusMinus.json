@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "plusMinus",
+  "usingComponents": {
+    "plusMinus": "/components/plusMinus/plusMinus",
+    "wux-button": "../../dist/button/index"
+  }
+}

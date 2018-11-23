@@ -23,7 +23,7 @@
   position:relative;
   flex-shrink: 0;
 }
-.plus:before,.minus:before{
+.plus::before,.minus::before{
   display: block;
   content:"";
   width:18rpx;
@@ -35,11 +35,11 @@
   transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
 }
-.plus:after{
+.plus::after{
   display: block;
   content:"";
+  width:4rpx;
   height:18rpx;
-  width:2rpx;
   background-color:#f0c64f;
   position:absolute;
   left:50%;

@@ -53,7 +53,7 @@ Component({
     changeFn:function(event){
       var oldCount = this.data.myCount;
       var count=event.detail.value;
-      var reg = /^(0|[1-9]\d*)$/;
+      var reg = /^-?(0|[1-9]\d*)$/;
       if(!reg.test(count)){
         wx.showToast({
           title: '请输入数字',

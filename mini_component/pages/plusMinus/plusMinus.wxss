@@ -1,0 +1,5 @@
+/* pages/plusMinus/plusMinus.wxss */
+page{
+  padding:30rpx;
+  box-sizing: border-box;
+}

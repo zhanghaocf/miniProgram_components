@@ -1,0 +1,7 @@
+<!--pages/plusMinus/plusMinus.wxml-->
+<plusMinus myCount="{{count}}"
+           operaType="{{operaType}}"
+           bindoperation="operafn">
+</plusMinus>
+<wux-button block type="assertive" data-type="operaCount" bindtap="selectProp">operaType="operaCount"</wux-button>
+<wux-button block type="balanced" data-type="square" bindtap="selectProp">operaType="square"</wux-button>

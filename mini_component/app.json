@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/scrollView/scrollView",
     "pages/index/index",
+    "pages/scrollView/scrollView",
     "pages/plusMinus/plusMinus",
     "pages/coolBanner/coolBanner",
     "pages/loading/loading",

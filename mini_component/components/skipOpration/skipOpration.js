@@ -53,13 +53,15 @@ Component({
       //console.log(selectIndex);
       if (selectIndex === index){
         this.setData({
-          isSame:true
+          isSame:true,
+          startX: e.touches[0].pageX
         });
         return;
       }
       this.setData({
         startX: e.touches[0].pageX,
-        isSame: false
+        isSame: false,
+        isMove: true,
       });
       var myEventDetail = {
         selectIndex: -1,
@@ -80,7 +82,7 @@ Component({
         this.setData({
           tranX: distance,
           selectIndex: index,
-          isMove: true,
+          
         })
       }
     },
@@ -88,14 +90,13 @@ Component({
       var data = this.data;
       var startX = data.startX;
       var isSame = data.isSame;
-      var tranX = data.tranX;
       var pageX = e.changedTouches[0].pageX;
       var maxSkipDistance = data.maxSkipDistance;
       var distance = pageX - startX;
+      console.log(distance)
       var obj = {};
-      if (!isSame){
-        //菜单还没划出来
-        if (distance > -80) {
+      var defaultval = isSame ? 0 : -80;
+        if (distance > defaultval) {
           obj = {
             selectIndex: -1
           }
@@ -104,12 +105,6 @@ Component({
             tranX: -maxSkipDistance,
           }
         }
-      }else{
-        //菜单划出来
-        obj = {
-          selectIndex: -1
-        }
-      }
       obj.isMove = false;
       this.setData(obj)
     },

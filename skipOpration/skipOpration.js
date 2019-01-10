@@ -1,4 +1,4 @@
-Component({
+﻿Component({
   properties:{
     needShare:{
       type:Boolean,
@@ -6,11 +6,16 @@ Component({
       observer: function (newVal, oldVal, changedPath) {
         // 属性被改变时执行的函数（可选），也可以写成在methods段中定义的方法名字符串, 如：'_propertyChange'
         // 通常 newVal 就是新设置的数据， oldVal 是旧数据
-        if (!newVal){
-          this.setData({
-            maxSkipDistance:150
-          })
+        if (newVal===oldVal){
+          return;
         }
+        let maxSkipDistance=300;
+        if (!newVal){
+            maxSkipDistance=150
+        }
+        this.setData({
+          maxSkipDistance: maxSkipDistance
+        })
       }
     },
     index:{
@@ -48,13 +53,15 @@ Component({
       //console.log(selectIndex);
       if (selectIndex === index){
         this.setData({
-          isSame:true
+          isSame:true,
+          startX: e.touches[0].pageX
         });
         return;
       }
       this.setData({
         startX: e.touches[0].pageX,
-        isSame: false
+        isSame: false,
+        isMove: true,
       });
       var myEventDetail = {
         selectIndex: -1,
@@ -75,7 +82,7 @@ Component({
         this.setData({
           tranX: distance,
           selectIndex: index,
-          isMove: true,
+          
         })
       }
     },
@@ -83,14 +90,13 @@ Component({
       var data = this.data;
       var startX = data.startX;
       var isSame = data.isSame;
-      var tranX = data.tranX;
       var pageX = e.changedTouches[0].pageX;
       var maxSkipDistance = data.maxSkipDistance;
       var distance = pageX - startX;
+      console.log(distance)
       var obj = {};
-      if (!isSame){
-        //菜单还没划出来
-        if (distance > -80) {
+      var defaultval = isSame ? 0 : -80;
+        if (distance > defaultval) {
           obj = {
             selectIndex: -1
           }
@@ -99,12 +105,6 @@ Component({
             tranX: -maxSkipDistance,
           }
         }
-      }else{
-        //菜单划出来
-        obj = {
-          selectIndex: -1
-        }
-      }
       obj.isMove = false;
       this.setData(obj)
     },

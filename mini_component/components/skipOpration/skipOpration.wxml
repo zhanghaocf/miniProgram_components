@@ -1,14 +1,16 @@
-<view class='skipwrap' 
-        data-index="{{index}}"
-        style="height:{{skipHeight}}rpx;margin-bottom:{{margBo}}rpx;{{selectIndex===index?'transform:translateX('+tranX+'rpx);':transStyle}}{{selectIndex===index&&!isMove?transStyle:''}}"
-        bindtouchstart='startTouch'
-        bindtouchmove='moveTouch'
-        bindtouchend='endTouch'
-        >
-    <view class='con'>
-      <slot></slot>
-    </view>
+<view class='iosover'>
+  <view class='skipwrap' 
+          data-index="{{index}}"
+          style="height:{{skipHeight}}rpx;margin-bottom:{{margBo}}rpx;{{selectIndex===index?'transform:translateX('+tranX+'rpx);':transStyle}}{{selectIndex===index&&!isMove?transStyle:''}}"
+          bindtouchstart='startTouch'
+          bindtouchmove='moveTouch'
+          bindtouchend='endTouch'
+          >
+      <view class='con'>
+        <slot></slot>
+      </view>
 
-    <view wx:if="{{needShare}}" data-index="{{index}}" catchtap='shareFn' hover-class='button-hover' hover-stay-time="100" class='operaBnt shareBtn'>分享</view>
-    <view catchtap="delFn" data-index="{{index}}" hover-class='button-hover' hover-stay-time="100" class='operaBnt del'>删除</view>
+      <view wx:if="{{needShare}}" data-index="{{index}}" catchtap='shareFn' hover-class='button-hover' hover-stay-time="100" class='operaBnt shareBtn'>分享</view>
+      <view catchtap="delFn" data-index="{{index}}" hover-class='button-hover' hover-stay-time="100" class='operaBnt del'>删除</view>
+    </view>
   </view>

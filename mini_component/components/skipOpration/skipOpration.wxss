@@ -4,6 +4,11 @@
   display: -webkit-flex;
  
 }
+/* 兼容ios样式的 */
+.iosover{
+  width:100%;
+  overflow: hidden;
+}
 .con{
   flex-basis: 100%;
   flex-shrink: 0;

@@ -8,7 +8,7 @@ Page({
     isLoading:false,
     isFinish:false,
     scrollViewHeight:0,
-    loadType:'Loading4',
+    loadType:'Loading0',
     datalist:[
       {
         id:1,

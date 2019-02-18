@@ -33,3 +33,10 @@
 .button-hover{
   opacity: 0.8
 }
+
+.wxstransStyle{
+  transition:transform 0.3s linear;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transform: translateX(0)!important;
+  -webkit-transform: -webkit-translateX(0)!important;
+}

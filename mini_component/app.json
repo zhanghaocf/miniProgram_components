@@ -1,11 +1,11 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/skipOperation/skipOperation",
     "pages/scrollView/scrollView",
     "pages/plusMinus/plusMinus",
     "pages/coolBanner/coolBanner",
     "pages/loading/loading",
-    "pages/skipOperation/skipOperation",
     "pages/component/component",
     "pages/logs/logs"
   ],

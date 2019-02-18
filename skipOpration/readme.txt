@@ -10,3 +10,4 @@ shareFn【fn】分享函数，参数有个列表索引index
 delFn  【fn】删除函数，参数有个列表索引index
 
 【BUG】修改了样式使得ios布局混乱的问题，由于最外围盒子设置了flex布局的缘故宽度比手机屏幕还要大时在ios中给page设置overflowhidden无效就会出现横向滚动条
+【优化】考虑到setdata会使视图层和逻辑层交互数据尤其是在mousemove中不停地调用setdata，为了减少setdata的调用，采用了wxs来优化。

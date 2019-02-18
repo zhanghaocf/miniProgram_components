@@ -1,16 +1,36 @@
+<wxs module="move" src="./move.wxs"></wxs>
 <view class='iosover'>
-  <view class='skipwrap' 
-          data-index="{{index}}"
-          style="height:{{skipHeight}}rpx;margin-bottom:{{margBo}}rpx;{{selectIndex===index?'transform:translateX('+tranX+'rpx);':transStyle}}{{selectIndex===index&&!isMove?transStyle:''}}"
-          bindtouchstart='startTouch'
-          bindtouchmove='moveTouch'
-          bindtouchend='endTouch'
-          >
-      <view class='con'>
-        <slot></slot>
+  <block wx:if="{{move.vCompare(wxversion)}}">
+    <!-- 可以使用wxs事件响应 -->
+    <view class="skipwrap {{selectIndex!==index?'wxstransStyle':''}}"
+            data-index="{{index}}"
+            data-hasSelected="{{index===selectIndex}}"
+            data-maxSkipDistance="{{maxSkipDistance}}"
+            style="height:{{skipHeight}}rpx;margin-bottom:{{margBo}}rpx;"
+            bindtouchstart='{{move.touchStart}}'
+            bindtouchmove='{{move.touchMove}}'
+            bindtouchend='{{move.touchEnd}}'
+            >
+        <view class='con'>
+          <slot></slot>
+        </view>
+        <view wx:if="{{needShare}}" data-index="{{index}}" catchtap='shareFn' hover-class='button-hover' hover-stay-time="100" class='operaBnt shareBtn'>分享{{selectIndex}}</view>
+        <view catchtap="delFn" data-index="{{index}}" hover-class='button-hover' hover-stay-time="100" class='operaBnt del'>删除</view>
       </view>
-
-      <view wx:if="{{needShare}}" data-index="{{index}}" catchtap='shareFn' hover-class='button-hover' hover-stay-time="100" class='operaBnt shareBtn'>分享</view>
-      <view catchtap="delFn" data-index="{{index}}" hover-class='button-hover' hover-stay-time="100" class='operaBnt del'>删除</view>
-    </view>
-  </view>
+    </block>
+    <block wx:if="{{!move.vCompare(wxversion)}}">
+      <view class='skipwrap' 
+              data-index="{{index}}"
+              style="height:{{skipHeight}}rpx;margin-bottom:{{margBo}}rpx;{{selectIndex===index?'transform:translateX('+tranX+'rpx);':transStyle}}{{selectIndex===index&&!isMove?transStyle:''}}"
+              bindtouchstart='startTouch'
+              bindtouchmove='moveTouch'
+              bindtouchend='endTouch'
+              >
+          <view class='con'>
+            <slot></slot>
+          </view>
+          <view wx:if="{{needShare}}" data-index="{{index}}" catchtap='shareFn' hover-class='button-hover' hover-stay-time="100" class='operaBnt shareBtn'>分享</view>
+          <view catchtap="delFn" data-index="{{index}}" hover-class='button-hover' hover-stay-time="100" class='operaBnt del'>删除</view>
+      </view>
+    </block>
+</view>

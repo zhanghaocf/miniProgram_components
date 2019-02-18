@@ -33,7 +33,9 @@ Component({
     //不是选中哪个index，只是为了让列表只有一个可以弹出菜单设置的变量
     selectIndex:{
       type:Number,
-      value:-1
+      value:-1,
+      observer: function (newVal, oldVal, changedPath) {
+      }
     }
   },
   data:{
@@ -43,6 +45,7 @@ Component({
     isMove:false,
     transStyle: 'transition:transform 0.3s linear;-webkit-transition: -webkit-transform 0.3s linear',
     isSame:false,
+    wxversion:wx.getSystemInfoSync().SDKVersion
   },
   methods:{
     startTouch(e) {
@@ -50,7 +53,7 @@ Component({
       //console.log(e.currentTarget.dataset.index);
       var index = e.currentTarget.dataset.index;
       var selectIndex = this.data.selectIndex;
-      //console.log(selectIndex);
+      console.log(selectIndex);
       if (selectIndex === index){
         this.setData({
           isSame:true,
@@ -81,8 +84,7 @@ Component({
         distance = distance <= -maxSkipDistance ? -maxSkipDistance : distance;
         this.setData({
           tranX: distance,
-          selectIndex: index,
-          
+          selectIndex: index
         })
       }
     },
@@ -93,7 +95,7 @@ Component({
       var pageX = e.changedTouches[0].pageX;
       var maxSkipDistance = data.maxSkipDistance;
       var distance = pageX - startX;
-      console.log(distance)
+      //console.log(distance)
       var obj = {};
       var defaultval = isSame ? 0 : -80;
         if (distance > defaultval) {
@@ -123,6 +125,14 @@ Component({
       } // detail对象，提供给事件监听函数
       var myEventOption = {} // 触发事件的选项
       this.triggerEvent('deleteFn', myEventDetail, myEventOption)
+    },
+    wxsSetIndex(obj){
+      let {index} = obj;
+      var myEventDetail = {
+        selectIndex: index,
+      } // detail对象，提供给事件监听函数
+      var myEventOption = {} // 触发事件的选项
+      this.triggerEvent('independenceFn', myEventDetail, myEventOption)
     }
   }
 })

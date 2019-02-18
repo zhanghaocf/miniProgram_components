@@ -7,7 +7,7 @@
           binddeleteFn="delete"
           needShare="{{needShare}}">
     <view class='styl'>
-      <view>姓名：{{item.name}}</view>
+      <view>姓名：{{item.name}}{{selectIndex}}</view>
       <view>年龄：{{item.age}}</view>
     </view>
   </zhskip>

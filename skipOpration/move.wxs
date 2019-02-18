@@ -1,0 +1,69 @@
+var initpagex=0;
+var translateX=0;
+var distanceOk=80;//滑至少80才会全出来
+var maxSkipDistance=0;
+var index=-1;
+var yixuanzhong=false;
+function touchStart(e, ins) {
+  initpagex = e.touches[0].pageX;
+  yixuanzhong=e.currentTarget.dataset.hasselected;
+  maxSkipDistance=e.currentTarget.dataset.maxskipdistance;
+  translateX = yixuanzhong ? translateX:0;//不加这句会导致一方选中，我点击第二条时，translateX没有初始化值直接弹出来菜单
+ 
+}
+function touchMove(e,ins) {
+  //console.log(JSON.stringify(e));
+  var pageX = e.touches[0].pageX;
+  var cha = pageX - initpagex
+  translateX = !yixuanzhong ? cha : cha > 0 ? cha - maxSkipDistance : -maxSkipDistance;
+  if (translateX <= -maxSkipDistance){
+    translateX = -maxSkipDistance
+  }
+  if (translateX >=0 && !yixuanzhong) {
+    translateX = 0
+  }
+  var instance = ins.selectComponent('.skipwrap');
+  instance.removeClass('wxstransStyle');
+  instance.setStyle({
+    'transform': 'translateX(' + translateX+'rpx)'
+  })
+}
+function touchEnd(e, ins) {
+  index=e.currentTarget.dataset.index;
+  var instance = ins.selectComponent('.skipwrap');
+  if (translateX <= -distanceOk && !yixuanzhong){
+    translateX=-maxSkipDistance;
+    //全出来
+    //告知逻辑层setdata
+    //console.log(index)
+    ins.callMethod('wxsSetIndex', { index});
+  } else if (yixuanzhong && translateX + maxSkipDistance < distanceOk){
+    translateX = -maxSkipDistance;
+  }else{
+    //退回去
+    translateX = 0;
+    if(yixuanzhong){
+      ins.callMethod('wxsSetIndex', { index: -1 });
+    }
+  }
+  instance.setStyle({
+    'transform': 'translateX(' + translateX + 'rpx)',
+    '-webkit-transform': '-webkit-translateX(' + translateX + 'rpx)',
+    'transition': 'transform 0.3s linear',
+    '-webkit-transition': '-webkit-transform 0.3s linear'
+  })
+}
+function vCompare(sdkversion){
+  var dealarr=244;
+  var str = sdkversion.split('.').join("").slice(0,3);
+  if (str >= dealarr){
+    return true;
+  }
+  return false;
+}
+module.exports = {
+  touchMove: touchMove,
+  touchStart: touchStart,
+  touchEnd: touchEnd,
+  vCompare: vCompare
+}

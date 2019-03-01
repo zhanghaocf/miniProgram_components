@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "zhLoading": "/components/component-zxLoading/component-zxLoading"
+  }
+}

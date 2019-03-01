@@ -1,0 +1,9 @@
+/* pages/love/love.wxss */
+.demo1{
+  box-shadow: 0 0 10rpx red;
+  display: inline-block;
+  opacity: 0;
+  z-index: -1;
+  position:relative;
+  left:1000px;
+}

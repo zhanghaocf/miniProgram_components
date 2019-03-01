@@ -1,0 +1,21 @@
+<!--pages/share/share.wxml-->
+<view class='wrap'>
+  <swiper autoplay="true" interval="4000" duration="1000" circular="true">
+      <swiper-item class="content">
+        兄弟姐妹帮帮忙！
+      </swiper-item>
+      <swiper-item class="content">
+        帅哥美女帮帮忙！
+      </swiper-item>
+  </swiper>
+  <canvas canvas-id="myCanvas" style="width:100%;height:{{canvasH}}px"/>
+  <view class='contwrap'>
+    {{content}}
+    <view bindtap='copy' hover-class='optactive' hover-stay-time="100" class='opt'>复制</view>
+    <view bindtap='share' hover-class='optactive' hover-stay-time="100" class='opt optshare'>
+      <button open-type="share" class="btnshare">分享</button>
+      分享
+    </view>
+  </view>
+</view>
+<zhLoading wx:if="{{isLoading}}" loadType="rocircle">稍等一哈哈</zhLoading>

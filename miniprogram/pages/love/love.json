@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zhLoading": "/components/component-zxLoading/component-zxLoading"
+  },
+  "navigationBarTitleText": "说说你的心里话"
+}

@@ -1,0 +1,11 @@
+<!--pages/content/content.wxml-->
+<!--pages/content/content.wxml-->
+<view class="wrap">
+  <image class='bgImg' src='/images/bg.jpg' mode='aspectFill'></image>
+  <view class='op transcenter'>
+    <view class='title'>需要点赞的内容</view>
+    <textarea fixed="true" class='txt' bindinput="optfn"></textarea>
+    <view bindtap='sureFn' hover-class="btnactive" hover-stay-time="100" class='btn transcenter'>确认</view>
+  </view>
+</view>
+<zhLoading wx:if="{{isLoading}}" loadType="rocircle">稍等一哈哈</zhLoading>

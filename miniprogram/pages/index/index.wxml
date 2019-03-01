@@ -1,0 +1,10 @@
+<!--pages/index/index.wxml-->
+<text>pages/index/index.wxml</text>
+<input wx:if="{{name}}" placeholder='11'></input>
+<input wx:else placeholder='22'></input>
+<button bindtap='h'>ss</button>
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="btn-area">
+    <button formType="submit">发送模板</button>
+  </view>
+</form>

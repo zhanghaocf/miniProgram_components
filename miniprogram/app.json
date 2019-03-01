@@ -1,0 +1,16 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/love/love",
+    "pages/content/content",
+    "pages/index/index",
+    "pages/share/share"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "兄弟姐妹帮帮忙",
+    "navigationBarTextStyle": "black"
+  }
+}

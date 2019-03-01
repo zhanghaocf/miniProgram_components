@@ -1,0 +1,6 @@
+<!--pages/love/love.wxml-->
+<block wx:for="{{cot}}" wx:key="{{id}}">
+  <canvas class='demo1' style="width: 150rpx; height: 60px;" canvas-id="canvas{{item.id}}"></canvas>
+</block>
+<canvas class='demo2' style="width: 750rpx; height: 300px;" canvas-id="mainCanvas"></canvas>
+<zhLoading wx:if="{{isLoading}}" loadType="rocircle">稍等一哈哈</zhLoading>

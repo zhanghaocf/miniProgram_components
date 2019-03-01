@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/classify/classify",
     "pages/skipOperation/skipOperation",
     "pages/scrollView/scrollView",
     "pages/plusMinus/plusMinus",

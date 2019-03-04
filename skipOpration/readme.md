@@ -12,11 +12,11 @@
 |delFn|event|e.detail.index|保证在同一个页面中的所有该组件删除的指定索引|
 ***
 
-< 【BUG】
+>【BUG】
 
 * 修改了样式使得ios布局混乱的问题，由于最外围盒子设置了flex布局的缘故宽度比手机屏幕还要大时在ios中给page设置overflowhidden无效就会出现横向滚动条
 
-< 【优化】
+> 【优化】
 
 * 考虑到setdata会使视图层和逻辑层通信交互数据尤其是在mousemove中不停地调用setdata会耗性能，为了减少setdata的调用，采用了wxs来优化。
 * 提供了版本比较的方法

@@ -14,24 +14,13 @@
 		<td></td>
 	</tr>
 </table>
-<div class="exampleDiv">
-
-### loadType的值
-
-gururin
-
-cube
-
-circle
-
-wave
-
-threedot
-
-rocircle
-
-grid
-
-foldcrid
-
-</div>
+***
+> loadType的值
+* gururin
+* cube
+* circle
+* wave
+* threedot
+* rocircle
+* grid
+*foldcrid

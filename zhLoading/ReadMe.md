@@ -14,8 +14,11 @@
 		<td></td>
 	</tr>
 </table>
+
 ***
+
 > loadType的值
+
 * gururin
 * cube
 * circle
@@ -23,4 +26,4 @@
 * threedot
 * rocircle
 * grid
-*foldcrid
+* foldcrid

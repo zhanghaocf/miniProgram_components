@@ -29,6 +29,11 @@ Page({
        id:5,
        name:'upPullData',
        url:'/pages/scrollView/scrollView'
+     },
+     {
+       id: 6,
+       name: 'classify',
+       url: '/pages/classify/classify'
      }
    ]
   },

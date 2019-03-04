@@ -1,4 +1,3 @@
-<!--pages/classify/classify.wxml-->
 <view style='height:{{wrapheight}}px'>
   <scroll-view class='left'
                scroll-y='true'

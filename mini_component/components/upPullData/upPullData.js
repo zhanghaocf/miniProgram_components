@@ -66,12 +66,5 @@ Component({
       } // 触发事件的选项
       this.triggerEvent('getList', myEventDetail, myEventOption)
     }
-  },
-  ready(){
-    wx.createSelectorQuery().selectAll('.h').boundingClientRect(function (rects) {
-      rects.forEach(function (rect) {
-        console.log(rect);
-      })
-    }).exec()
   }
 })

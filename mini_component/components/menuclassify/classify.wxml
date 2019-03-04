@@ -1,0 +1,30 @@
+<view style='height:{{wrapheight}}px'>
+  <scroll-view class='left'
+               scroll-y='true'
+               scroll-with-animation='true'>
+    <block wx:for='{{list}}' wx:key='id'>
+      <view class='lnav oneline {{activeIndex===index?"ac_lnva":""}}' data-index='{{index}}' bindtap='selectLeft'>
+        {{item.type}}
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view class='right'
+               scroll-y='true'
+               scroll-with-animation='true'
+               scroll-top='{{slideHeight}}px'
+               bindscroll='scrollmenu'>
+    <block wx:for='{{list}}' wx:key='id'>
+      <view class='title'>
+        {{item.type}}
+      </view>
+      <view class='menuwrap flexwrap'>
+        <block wx:for='{{item.children}}' wx:for-item='child' wx:for-index='idx' wx:key='id'>
+          <view class='menuitem flexwrap {{activemenu===idx&&activemenu2===index?"activemenu":""}}'  data-index='{{index}}-{{idx}}' bindtap='selectdetail'>
+            <image class='itemimg' src='{{child.img}}' mode='aspectFill'></image>
+            <view class='itemname oneline'>{{child.name}}</view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>

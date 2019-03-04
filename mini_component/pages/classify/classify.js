@@ -300,58 +300,12 @@ Page({
       wrapheight
     })
   },
-  selectLeft(e){
-    let index=!!e?e.currentTarget.dataset.index:this.data.activemenu2;
-    let topArr = this.data.topArr;
-    this.data.clickbol=true;
-    this.setData({
-      activeIndex:index,
-      slideHeight: topArr[index],
-    })
-  },
-  selectdetail(e){
-    let arr = e.currentTarget.dataset.index.split('-');
-    const data=this.data;
-    let activemenu = data.activemenu;
-    let activemenu2 = data.activemenu2;
-    arr[1] = Number(arr[1]);
-    arr[0] = Number(arr[0]);
-    if (activemenu === arr[1] && activemenu2 === arr[0]){
-      return;
-    }
-    this.data.activemenu2 = arr[0];
-    this.selectLeft();
-    this.setData({
-      activemenu: arr[1],
-      activemenu2:arr[0]
-    })
-  },
-  scrollmenu(e){
-    const data=this.data;
-    let clickBol = data.clickbol;
-    if (clickBol){
-      this.data.clickbol=false;
-      return;
-    }
-    let activeIndex = data.activeIndex;
-    let topArr = data.topArr;
-    let scrollTop = e.detail.scrollTop;
-    let slideHeight = data.slideHeight;
-    for(let i=0,len=topArr.length;i<len;i++){
-      if (scrollTop >= topArr[i]){
-        activeIndex=i;
-      }else{
-        break;
-      }
-    }
-    if (data.activeIndex != activeIndex){
-      this.setData({
-        activeIndex
-      })
-    }
-    // this.setData({
-    //   activeIndex
-    // })
+  handle(e){
+    var list=this.data.list;
+    var detail=e.detail;
+    let l=detail.lmenuIndex;
+    let r=detail.rmenuIndex;
+    console.log(`你点击了\"${list[l].type}\"中的\"${list[l].children[r].name}\"选项`);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

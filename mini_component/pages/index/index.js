@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const apiproxy=require('../../utils/wxapiToPromise.js');
 Page({
   data: {
    list:[
@@ -38,6 +38,5 @@ Page({
    ]
   },
   onLoad: function () {
- 
   }
 })

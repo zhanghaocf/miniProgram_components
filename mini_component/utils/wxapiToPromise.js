@@ -23,30 +23,60 @@ let services = {
    * 空方法，只是为了使整个调用链排版美观
    */
   taskSequence: () => new Promise((resolve) => resolve()),
-
 };
-const proxy = new Proxy(services, {
-  get(target, property) {
-    if (property in target) {
-      return target[property];
-    } else if (property in wx) {
-      return (obj) => {
-        return new Promise((resolve, reject) => {
-          obj = obj || {};
-          obj.success = (...args) => {
-            resolve(...args)
-          };
-          obj.fail = (...args) => {
-            reject(...args);
-          };
-          wx[property](obj);
-        });
-      }
-    } else {
-      throw new IllegalAPIException(property);
+
+let zhobjFn = function (proxy){
+  proxy = proxy||{};
+  for (let item in wx) {
+    if (typeof wx[item] !== 'function') {
+      return;
     }
+    Object.defineProperty(proxy, [item], {
+      get() {
+        return (obj) => {
+          return new Promise((res, rej) => {
+            obj = obj || {};
+            obj.success = (...args) => {
+              res(...args)
+            };
+            obj.fail = (...args) => {
+              rej(...args);
+            };
+            wx[item](obj);
+          })
+        }
+      }
+    })
   }
-});
+}
+let proxy={};
+if (!!(typeof Proxy)){
+  proxy = new Proxy(services, {
+    get(target, property) {
+      if (property in target) {
+        return target[property];
+      } else if (property in wx && typeof wx[property] === 'function') {
+        return (obj) => {
+          return new Promise((resolve, reject) => {
+            obj = obj || {};
+            obj.success = (...args) => {
+              resolve(...args)
+            };
+            obj.fail = (...args) => {
+              reject(...args);
+            };
+            wx[property](obj);
+          });
+        }
+      } else {
+        throw new IllegalAPIException(property);
+      }
+    }
+  })
+}else{
+  zhobjFn(proxy)
+}
+
 module.exports = {
   proxy: proxy
 }

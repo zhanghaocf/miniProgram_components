@@ -4,15 +4,11 @@ Component({
       type: Number, //该属性设置scrollview组件高度
       value: 0, // 属性初始值（可选），如果未指定则会根据类型选择一个
     },
-    activeIndex:{
-      type:Number,
-      value:0
-    },
-    activemenu: {
+    activemenu: {//选中右侧菜单索引
       type: Number,
       value: -1
     },
-    activemenu2: {
+    activemenu2: {//左侧菜单索引与activeIndex一致由于某些问题不能让他们处于同一个名字
       type: Number,
       value: -1
     },
@@ -22,6 +18,7 @@ Component({
     },
   },
   data:{
+    activeIndex:0,
     topArr:[],
     slideHeight:0,
     clickbol: false//为了解决左侧点击最后一个右侧滑动因滑动的距离达不到最后一个要求的距离而选中了他上一个或是上上个等问题(手滑动会一直触发scrollmenu，但点击造成的滑动只会触发一次scrollmenu))

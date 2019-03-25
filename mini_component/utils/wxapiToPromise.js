@@ -24,9 +24,9 @@ let services = {
    */
   taskSequence: () => new Promise((resolve) => resolve()),
 };
-
-let zhobjFn = function (proxy){
-  proxy = proxy||{};
+let proxy = {};
+let zhobjFn = function (){
+  proxy=services;
   for (let item in wx) {
     if (typeof wx[item] !== 'function') {
       return;
@@ -34,6 +34,9 @@ let zhobjFn = function (proxy){
     Object.defineProperty(proxy, [item], {
       get() {
         return (obj) => {
+          if (item ==='showToast'){
+            console.log('yes');
+          }
           return new Promise((res, rej) => {
             obj = obj || {};
             obj.success = (...args) => {
@@ -49,7 +52,7 @@ let zhobjFn = function (proxy){
     })
   }
 }
-let proxy={};
+
 if (!!(typeof Proxy)){
   proxy = new Proxy(services, {
     get(target, property) {
@@ -74,7 +77,8 @@ if (!!(typeof Proxy)){
     }
   })
 }else{
-  zhobjFn(proxy)
+  zhobjFn()
+  
 }
 
 module.exports = {

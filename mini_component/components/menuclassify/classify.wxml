@@ -1,4 +1,4 @@
-<view style='height:{{wrapheight}}px'>
+<view class='zhdirectory' style='height:{{wrapheight}}px'>
   <scroll-view class='left'
                scroll-y='true'
                scroll-with-animation='true'>

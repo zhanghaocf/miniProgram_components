@@ -34,10 +34,15 @@ Component({
   methods:{
     handleHeight(){
       let ths = this;
+      let selector = ths.createSelectorQuery();
+      let comheight=0;
+      selector.select('.zhdirectory').boundingClientRect(function(rects){
+        comheight = rects.top;
+      })
       //封装到组件中写在生命周期ready中,获取指定节点的top值作为高度
-      ths.createSelectorQuery().selectAll('.title').boundingClientRect(function (rects) {
+      selector.selectAll('.title').boundingClientRect(function (rects) {
         rects.forEach(function (rect) {
-          ths.data.topArr.push(rect.top);
+          ths.data.topArr.push(rect.top - comheight);
         })
         ths.selectLeft();
       }).exec();

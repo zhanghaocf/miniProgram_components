@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/loadimg/loadimg",
     "pages/index/index",
+    "pages/loadimg/loadimg",
     "pages/classify/classify",
     "pages/skipOperation/skipOperation",
     "pages/scrollView/scrollView",

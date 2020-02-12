@@ -34,6 +34,11 @@ Page({
        id: 6,
        name: 'classify',
        url: '/pages/classify/classify'
+     },
+     {
+       id: 7,
+       name: 'imageLoader',
+       url: '/pages/loadimg/loadimg'
      }
    ]
   },

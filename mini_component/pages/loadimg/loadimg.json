@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "图片加载",
+  "usingComponents": {
+    "img":"/components/imageLoader/imageLoader"
+  }
+}

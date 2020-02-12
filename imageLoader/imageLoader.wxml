@@ -1,0 +1,9 @@
+<image class="zhloadimgclass"
+       src="{{src}}"
+       mode="{{mode}}"
+       hidden="{{!loadbol}}"
+       bindload="loadFn"></image>
+<image class="zhloadimgclass"
+       src="{{defaultSource}}"
+       mode="{{mode}}"
+       hidden="{{loadbol}}"></image>

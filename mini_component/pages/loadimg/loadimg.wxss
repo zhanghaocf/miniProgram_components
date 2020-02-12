@@ -1,0 +1,5 @@
+/* pages/loadimg/loadimg.wxss */
+.imcls{
+  width:300rpx;
+  height:200rpx;
+}

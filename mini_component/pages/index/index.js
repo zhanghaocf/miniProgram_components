@@ -39,6 +39,11 @@ Page({
        id: 7,
        name: 'imageLoader',
        url: '/pages/loadimg/loadimg'
+     },
+     {
+       id:8,
+       name: '画板字自动换行',
+       url: '/pages/cas/cas'
      }
    ]
   },

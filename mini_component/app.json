@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/cas/cas",
     "pages/loadimg/loadimg",
     "pages/classify/classify",
     "pages/skipOperation/skipOperation",

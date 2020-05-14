@@ -7,10 +7,10 @@ Page({
   onLoad() {
     console.log(123)
     const ctx = wx.createCanvasContext('casid')
-    this.drawfont(ctx,'你好111111122222','white',100,100,60,160,2)
+    this.drawfont(ctx,'你好111111122222','white',100,100,60,160,2,10)
     ctx.draw()
   },
-  drawfont(ctx,cot,color,x,y,size,maxwidth,maxline){
+  drawfont(ctx,cot,color,x,y,size,maxwidth,maxline,lineheight){
     ctx.setFillStyle('white')
     ctx.setTextBaseline('top')
     ctx.setFontSize(size)
@@ -35,8 +35,10 @@ Page({
       let lastlinecot = row[maxline-1]
       row[maxline-1]=lastlinecot.slice(0, -1)+'...'
     }
+    lineheight = lineheight || 0
     for (var b = 0; b < row.length; b++) {
-      ctx.fillText(row[b], x, y+size*(b+1));
+      b===0 && ctx.fillText(row[b], x, y);
+      b!==0 && ctx.fillText(row[b], x, y+(size+lineheight)*b);
     }
   }
 })

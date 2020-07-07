@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/userinfo/userinfo",
     "pages/cas/cas",
     "pages/loadimg/loadimg",
     "pages/classify/classify",

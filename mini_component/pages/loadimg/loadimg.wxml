@@ -1,6 +1,5 @@
 <!--pages/loadimg/loadimg.wxml-->
-<text>pages/loadimg/loadimg.wxml</text>
-<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581502491918&di=84967cbc8635dad669476f2118a858ab&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201601%2F07%2F20160107191056_U5nTv.jpeg"
+<img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2090637220,2708589579&fm=26&gp=0.jpg"
 mode="aspectFill"
 zhloadimgclass="imcls"
 defaultSource="/imgs/banner1.jpg"

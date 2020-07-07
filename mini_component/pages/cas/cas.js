@@ -18,6 +18,7 @@ Page({
     let temp = ""
     let row = []
     for (var a = 0; a < chr.length; a++) {
+      // attention:maybe need cost long time
       if (ctx.measureText(temp).width < maxwidth) {
         temp += chr[a];
       }

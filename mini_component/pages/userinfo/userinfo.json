@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"通用授权组件",
+  "usingComponents": {
+    "author": "/components/author/author"
+  }
+}

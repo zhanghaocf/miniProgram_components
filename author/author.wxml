@@ -1,0 +1,16 @@
+<view class="authorwrap">
+  <image src="{{imgurl}}" mode="aspectFill" class="headimg"></image>
+  <view class="title oneline">{{name}}</view>
+  <view class="info fourline">
+    {{info}}
+  </view>
+  <view wx:if="{{needAuthor}}" class="btn" hover-class="btncls" hover-stay-time="50" hover-start-time="10">
+    <button class="bb"
+            open-type="getUserInfo"
+            bindgetuserinfo="getuserinfo"></button>
+    {{btnText}}
+  </view>
+  <view wx:else class="btn" hover-class="btncls" hover-stay-time="50" hover-start-time="10" catchtap="fn">
+    {{btnText}}
+  </view>
+</view>

@@ -44,6 +44,11 @@ Page({
        id:8,
        name: '画板字自动换行',
        url: '/pages/cas/cas'
+     },
+     {
+       id:9,
+       name: '通用授权页面',
+       url:'/pages/userinfo/userinfo'
      }
    ]
   },

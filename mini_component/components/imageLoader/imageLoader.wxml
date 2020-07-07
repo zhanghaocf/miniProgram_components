@@ -2,8 +2,10 @@
        src="{{src}}"
        mode="{{mode}}"
        hidden="{{!loadbol}}"
-       bindload="loadFn"></image>
-<image class="zhloadimgclass"
-       src="{{defaultSource}}"
-       mode="{{mode}}"
-       hidden="{{loadbol}}"></image>
+       lazy-load="{{lazyload}}"
+       bindload="loadFn"
+       binderror="errorfn"></image>
+<view class="zhloadimgclass zherror"
+       hidden="{{loadbol}}">
+    <image src="./{{msg}}.png" class="defaultpic" mode="widthFix"></image>
+</view>

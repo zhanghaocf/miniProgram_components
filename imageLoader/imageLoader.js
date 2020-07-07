@@ -1,13 +1,10 @@
 Component({
   externalClasses: ['zhloadimgclass'],
   data: {
-    loadbol: false
+    loadbol: false,
+    msg:'load'
   },
   properties:{
-    defaultSource:{
-      type:String,
-      value:''
-    },
     src:{
       type:String,
       value:''
@@ -15,11 +12,20 @@ Component({
     mode:{
       type:String,
       value:'scaleToFill'
+    },
+    lazyload:{
+      type:Boolean,
+      value:false
     }
   },
   methods:{
+    errorfn(){
+      this.setData({
+        msg:'error'
+      })
+    },
     loadFn(){
-      console.log("加载好啦");
+      // console.log("加载好啦");
       this.setData({
         loadbol:true
       })
